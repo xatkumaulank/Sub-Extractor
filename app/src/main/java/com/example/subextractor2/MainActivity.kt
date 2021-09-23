@@ -23,8 +23,9 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.let {
-            it?.btnSubExtractor?.setOnClickListener(View.OnClickListener {
-                ExtractSubtitleTask(this,binding!!.tvSubResult).execute(convertYoutubeLink(binding!!.edtPasteLink.text.toString().trim()))
+            bindingNotNull ->
+            bindingNotNull?.btnSubExtractor?.setOnClickListener(View.OnClickListener {
+                ExtractSubtitleTask(this,bindingNotNull.tvSubResult).execute(convertYoutubeLink(bindingNotNull.edtPasteLink.text.toString().trim()))
             })
         }
     }
