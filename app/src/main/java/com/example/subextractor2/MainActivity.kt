@@ -31,6 +31,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun convertYoutubeLink(youtubeLink : String) : String{
+        if (youtubeLink.contains("youtu.be")){
+            return youtubeLink.removePrefix("https://youtu.be/")
+        }
         return youtubeLink.removePrefix("https://www.youtube.com/watch?v=")
     }
 }
